@@ -141,19 +141,19 @@ export default function BATEnterprisesPage() {
       {/* About Section - The Mission */}
       <section
         id="mission"
-        className="min-h-screen flex items-center justify-center px-4 py-20"
+        className="min-h-screen flex items-center justify-center px-2 sm:px-4 py-10 sm:py-20"
       >
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           onViewportEnter={() => setMissionInView(true)}
           transition={{ duration: 1 }}
-          className="transform -rotate-2"
+          className="transform -rotate-2 w-full"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-12 text-green-400">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-12 text-green-400 text-center">
             The Mission
           </h2>
-          <div className="max-w-3xl mx-auto px-8 text-2xl md:text-3xl leading-relaxed text-gray-300 font-mono">
+          <div className="max-w-xs xs:max-w-md sm:max-w-3xl mx-auto px-2 sm:px-8 text-base xs:text-lg sm:text-2xl md:text-3xl leading-relaxed text-gray-300 font-mono text-center break-words">
             {typedText}
             <span className="animate-pulse">|</span>
           </div>
@@ -161,17 +161,17 @@ export default function BATEnterprisesPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
+      <section className="min-h-screen flex flex-col items-center justify-center px-2 sm:px-4 py-10 sm:py-20 w-full">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-6xl font-bold mb-20 text-center"
+          className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-bold mb-10 sm:mb-20 text-center w-full"
         >
           {"📁 BAT Project Files"}
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-6 sm:gap-12 w-full">
           {projects.map((project, index) => (
             <div
               key={project.title}
@@ -189,21 +189,21 @@ export default function BATEnterprisesPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
+      <section className="min-h-screen flex flex-col items-center justify-center px-2 sm:px-4 py-10 sm:py-20 w-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-center max-w-2xl mx-auto"
+          className="text-center max-w-xs xs:max-w-md sm:max-w-2xl mx-auto w-full"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-12">
             Want to reach out?{" "}
           </h2>
-          <p className="text-xl text-gray-400 mb-8">
+          <p className="text-base xs:text-lg sm:text-xl text-gray-400 mb-4 sm:mb-8 break-words">
             Email hello@bat.enterprises
           </p>
 
-          <div className="flex justify-center space-x-6 mb-12">
+          <div className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-12">
             <Button
               variant="ghost"
               size="icon"
