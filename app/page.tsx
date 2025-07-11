@@ -150,7 +150,7 @@ export default function BATEnterprisesPage() {
           transition={{ duration: 1 }}
           className="transform -rotate-2 w-full"
         >
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-12 text-green-400 text-center">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-12 text-green-400">
             The Mission
           </h2>
           <div className="max-w-xs xs:max-w-md sm:max-w-3xl mx-auto px-2 sm:px-8 text-base xs:text-lg sm:text-2xl md:text-3xl leading-relaxed text-gray-300 font-mono  break-words">

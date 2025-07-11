@@ -53,7 +53,7 @@ function GlobalHUDCanvas() {
       const centerY = rect.height / 2;
 
       // Draw latitude/longitude mesh
-      ctx.strokeStyle = "rgba(128, 128, 128, 0.15)";
+      ctx.strokeStyle = "rgba(128, 128, 128, 0.25)";
       ctx.lineWidth = 1;
 
       // Mesh rotation
@@ -124,7 +124,7 @@ function GlobalHUDCanvas() {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      ctx.strokeStyle = "rgba(128, 128, 128, 0.15)";
+      ctx.strokeStyle = "rgba(128, 128, 128, 0.25)";
       ctx.lineWidth = 1;
 
       const gridSize = 40;
