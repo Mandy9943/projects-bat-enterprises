@@ -217,13 +217,11 @@ function BATLogo() {
       initial={{
         opacity: 0,
         scale: 0.3,
-        rotateY: 180,
         filter: "blur(20px)",
       }}
       animate={{
         opacity: 1,
         scale: 1,
-        rotateY: 0,
         filter: "blur(0px)",
       }}
       transition={{
@@ -233,132 +231,41 @@ function BATLogo() {
       }}
       whileHover={{
         scale: 1.05,
-        rotateY: 5,
         transition: { duration: 0.3 },
       }}
     >
+      <div
+        className="flex flex-col items-center justify-center font-black select-none"
+        style={{ fontFamily: '"Geist", sans-serif' }}
+      >
+        <h1 className="logo-text text-[clamp(6rem,20vw,9rem)] leading-none">
+          BAT
+        </h1>
+        <h2 className="logo-text text-[clamp(2rem,8vw,3rem)] tracking-[0.2em] -mt-2 md:-mt-4">
+          ENTERPRISES
+        </h2>
+      </div>
       <style jsx>{`
-        .logo-stroke {
-          opacity: 0.4;
-          animation: neon-sign 8s ease-in-out;
-          animation-fill-mode: forwards;
+        .logo-text {
+          background: linear-gradient(90deg, #00ffad, #0072ff);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          text-shadow: 0 0 5px rgba(0, 255, 173, 0.4),
+            0 0 15px rgba(0, 255, 173, 0.4), 0 0 30px rgba(0, 114, 255, 0.3);
+          transition: text-shadow 0.3s ease;
         }
-        @keyframes neon-sign {
-          0% {
-            opacity: 0.4;
-            filter: drop-shadow(0 0 5px #00ffad);
-          }
-          10% {
-            opacity: 1;
-            filter: drop-shadow(0 0 20px #00ffad) drop-shadow(0 0 40px #00ffad);
-          }
-          15% {
-            opacity: 0.3;
-            filter: drop-shadow(0 0 5px #00ffad);
-          }
-          25% {
-            opacity: 1;
-            filter: drop-shadow(0 0 25px #00ffad) drop-shadow(0 0 50px #00ffad);
-          }
-          30% {
-            opacity: 0.4;
-            filter: drop-shadow(0 0 5px #00ffad);
-          }
-          40% {
-            opacity: 1;
-            filter: drop-shadow(0 0 30px #00ffad) drop-shadow(0 0 60px #00ffad);
-          }
-          45% {
-            opacity: 0.5;
-            filter: drop-shadow(0 0 10px #00ffad);
-          }
-          100% {
-            opacity: 0.6;
-            filter: drop-shadow(0 0 15px #00ffad) drop-shadow(0 0 30px #00ffad);
-          }
-        }
-        .logo-stroke:hover {
-          opacity: 0.8;
-          filter: drop-shadow(0 0 20px #00ffad) drop-shadow(0 0 40px #00ffad);
-          transition: all 0.3s ease;
+        .logo-text:hover {
+          text-shadow: 0 0 10px rgba(0, 255, 173, 0.7),
+            0 0 25px rgba(0, 255, 173, 0.7), 0 0 50px rgba(0, 114, 255, 0.5);
         }
         @media (prefers-reduced-motion: reduce) {
-          .logo-stroke {
-            animation: none;
-            opacity: 0.6;
-            filter: drop-shadow(0 0 15px #00ffad);
-          }
-        }
-        @media (max-width: 640px) {
-          .logo-stroke.bat {
-            font-size: 120px !important;
-          }
-          .logo-stroke.enterprises {
-            font-size: 64px !important;
-          }
-        }
-        @media (min-width: 641px) and (max-width: 1023px) {
-          .logo-stroke.bat {
-            font-size: 80px !important;
-          }
-          .logo-stroke.enterprises {
-            font-size: 36px !important;
-          }
-        }
-        @media (min-width: 1024px) {
-          .logo-stroke.bat {
-            font-size: 120px !important;
-          }
-          .logo-stroke.enterprises {
-            font-size: 56px !important;
+          .logo-text {
+            text-shadow: 0 0 5px rgba(0, 255, 173, 0.4),
+              0 0 15px rgba(0, 255, 173, 0.4);
           }
         }
       `}</style>
-      <svg
-        width="100%"
-        height="auto"
-        viewBox="0 0 600 200"
-        className="mx-auto block select-none"
-        aria-hidden="true"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <text
-          x="50%"
-          y="35%"
-          dominantBaseline="middle"
-          textAnchor="middle"
-          fontFamily="Geist, sans-serif"
-          fontWeight="900"
-          fontSize="120"
-          fill="transparent"
-          stroke="url(#grad)"
-          strokeWidth="3"
-          className="logo-stroke bat"
-        >
-          BAT
-        </text>
-        <text
-          x="50%"
-          y="75%"
-          dominantBaseline="middle"
-          textAnchor="middle"
-          fontFamily="Geist, sans-serif"
-          fontWeight="900"
-          fontSize="56"
-          fill="transparent"
-          stroke="url(#grad)"
-          strokeWidth="2"
-          className="logo-stroke enterprises"
-        >
-          ENTERPRISES
-        </text>
-        <defs>
-          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#00ffad" />
-            <stop offset="100%" stopColor="#0072ff" />
-          </linearGradient>
-        </defs>
-      </svg>
     </motion.div>
   );
 }
@@ -525,25 +432,16 @@ function FuturisticLoader({ onComplete }: { onComplete: () => void }) {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <svg width="200" height="80" viewBox="0 0 200 80">
-          <text
-            x="50%"
-            y="50%"
-            dominantBaseline="middle"
-            textAnchor="middle"
-            fontFamily="Geist, sans-serif"
-            fontWeight="900"
-            fontSize="48"
-            fill="transparent"
-            stroke="#00ffad"
-            strokeWidth="2"
-            style={{
-              filter: "drop-shadow(0 0 10px #00ffad)",
-            }}
-          >
-            BAT
-          </text>
-        </svg>
+        <h1
+          className="font-black text-5xl"
+          style={{
+            fontFamily: '"Geist", sans-serif',
+            color: "#00ffad",
+            textShadow: "0 0 5px #00ffad, 0 0 15px #00ffad, 0 0 25px #00ffad",
+          }}
+        >
+          BAT
+        </h1>
       </motion.div>
 
       {/* Progress Bar */}
