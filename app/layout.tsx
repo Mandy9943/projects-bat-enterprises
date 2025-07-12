@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import type React from "react";
 import "./globals.css";
 
@@ -45,6 +46,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={spaceGrotesk.className}>{children}</body>
+      <Script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="b18aea4c-c5b1-4df5-840e-7351923e7be2"
+        strategy="afterInteractive"
+      />
     </html>
   );
 }
